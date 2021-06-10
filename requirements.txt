@@ -1,0 +1,39 @@
+certifi==2020.4.5.1
+click==7.1.2
+dlib==19.19.0
+dotmap==1.3.14
+face-recognition==1.3.0
+face-recognition-models==0.3.0
+numpy==1.18.4
+opencv-python==4.2.0.34
+Pillow==7.1.2
+tqdm==4.46.0
+wincertstore==0.2
+imutils==0.5.3
+requests==2.24.0
+
+# Frequently asked question (FAQ)
+
+1. dlib ImportError: DLL load failed
+If you are running MaskTheFace on windows, you might face dlib import error. You can solve this error by uninstalling dlib installed through requirements.txt and install from scratch. Use the following commands
+```
+pip uninstall dlib
+git clone https://github.com/davisking/dlib.git
+cd dlib
+python setup.py install
+```
+This will build and install the dlib python library. Make sure you are in virtual environment you plan on using MaskTheFace in when you run the above commands.
+
+
+2. fetch_dataset.py util import error
+fetch_dataset.py is supposed to be run from the parent folder i.e.
+
+```
+# Correct
+cd MaskTheFace
+python utils/fetch_dataset.py
+
+# Wrong
+cd MaskTheFace/utils
+python fetch_dataset.py
+```
